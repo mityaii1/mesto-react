@@ -1,0 +1,15 @@
+.element__button-like{
+    grid-area: button-like;
+    width: 21px;
+    height: 19px;
+    padding: 0;
+    margin: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    background-image: url(../../../images/like.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+    z-index: 1;
+}

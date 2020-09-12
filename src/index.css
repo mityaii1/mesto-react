@@ -1,0 +1,23 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/inter.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__input-error/_active/popup__input-error_active.css);
+@import url(./blocks/popup/__input/_type/_error/popup__input_type_error.css);
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/element/element.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/transparent/transparent.css);
+
+
+/*div, p, h1, h2, h3, img, a, header, ul, li, button {
+    border: 1px solid rgb(253, 0, 169);
+  }
+*/
+  .form__input_type_error {
+  border-bottom-color: red;
+}
+

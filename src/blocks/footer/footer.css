@@ -1,0 +1,15 @@
+@import url(./__copyright/footer__copyright.css);
+.footer {
+    max-width: 882px;
+    margin: 0 auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        max-width: calc(282px * 2 + 18px);
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer {
+        max-width: 282px;
+    }
+}
