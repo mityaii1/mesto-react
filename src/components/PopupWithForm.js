@@ -11,7 +11,7 @@ function PopupWithForm(props) {
 
                     {props.children}
 
-                    <button type="submit" className="popup__button-save">{props.isOpen && (props.name === "card") ? ('Создать') : (props.name === "remove-card") ? ('Да') : ('Сохранить')}</button>
+                    <button type="submit" className="popup__button-save">{props.buttonText}</button>
                 </form>
             </div>
         </section>

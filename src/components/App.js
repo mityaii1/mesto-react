@@ -12,20 +12,20 @@ function App() {
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
     const [selectedCard, setSelectedCard] = React.useState(false);
-
+    const [isCardDeletePopupOpen, setIsCardDeletePopupOpen] = React.useState(false);
 
     const handleEditAvatarClick = () => { setIsEditAvatarPopupOpen(!isEditAvatarPopupOpen); }
     const handleEditProfileClick = () => { setIsEditProfilePopupOpen(!isEditProfilePopupOpen); }
     const handleAddPlaceClick = () => { setIsAddPlacePopupOpen(!isAddPlacePopupOpen); }
-    const handleCardClick = (card) => {
-        setSelectedCard(card);
-    }
+    const handleCardClick = (card) => { setSelectedCard(card); }
+    const handleCardDeleteClick = () => { setIsCardDeletePopupOpen(!isCardDeletePopupOpen); }
 
     const closeAllPopups = () => {
         setIsEditAvatarPopupOpen(false)
         setIsEditProfilePopupOpen(false)
         setIsAddPlacePopupOpen(false)
         setSelectedCard(false)
+        setIsCardDeletePopupOpen(false)
     }
     return (
         <div className="page">
@@ -35,8 +35,9 @@ function App() {
                 onEditProfile={handleEditProfileClick}
                 onAddPlace={handleAddPlaceClick}
                 onCardClick={handleCardClick}
+                onCardDelete={handleCardDeleteClick}
             />
-            <PopupWithForm name="update-avatar" title="Обновить аватар" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} children={
+            <PopupWithForm name="update-avatar" title="Обновить аватар" buttonText="Сохранить" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} children={
                 <>
                     <div className="popup__field">
                         <input name="link_to_avatar" type="url" id="link-input"
@@ -47,7 +48,7 @@ function App() {
                 </>
             }
             />
-            <PopupWithForm name="profile" title="Редактировать профиль" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} children={
+            <PopupWithForm name="profile" title="Редактировать профиль" buttonText="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} children={
                 <>
                     <div className="popup__field">
                         <input name="full_name" type="text" id="name-input" className="popup__input popup__input_name"
@@ -63,7 +64,7 @@ function App() {
                 </>
             }
             />
-            <PopupWithForm name="card" title="Новое место" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} children={
+            <PopupWithForm name="card" title="Новое место" buttonText="Создать" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} children={
                 <>
                     <div className="popup__field">
                         <input name="name_card" type="text" id="card-input"
@@ -80,11 +81,8 @@ function App() {
                 </>
             }
             />
-            {/* <PopupWithForm name="remove-card" title="Вы уверены?" isOpen={false} onClose={closeAllPopups} children={
-                <>
-                </>
-            }
-            /> */}
+            <PopupWithForm name="remove-card" title="Вы уверены?" buttonText="Да" isOpen={isCardDeletePopupOpen} onClose={closeAllPopups}
+            />
             <ImagePopup name="images" card={selectedCard} onClose={closeAllPopups} />
             <Footer />
         </div>
