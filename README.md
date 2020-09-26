@@ -15,5 +15,5 @@
 
 **Ссылка на проект**
 
-* [Ссылка на проект на GitHub](https://mityaii1.github.io/mesto/)
+* [Ссылка на проект на GitHub](https://mityaii1.github.io/mesto-react/)
 
